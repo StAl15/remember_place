@@ -1,14 +1,65 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фото</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/list_places.css' %}">
 </head>
+
 <body>
 
 <header>
-    <h5>Выйти</h5>
+    <div class="round_profile">
+        <img src="{% static 'images/face.svg' %}" alt=""/>
+        <h5>John Doe</h5>
+    </div>
+    <div class="btn_exit">
+        <h5>Выйти</h5>
+    </div>
 </header>
+<div class="content">
+
+
+        {% if not places_list %}
+            <div class="label_no_places">
+                <h3>У вас нет ни одного воспоминания</h3>
+                <button>
+                    Добавить воспоминание
+                </button>
+            </div>
+        {% else %}
+            <div class="list_places">
+            {% for place in places_list %}
+
+                <div class="card" style="width: 18rem; margin-right: 20px; margin-bottom: 20px;">
+                    <a href="http://localhost:8000/{{ place.id }}/" style="text-decoration: none;">
+                        <img class="card-img-top" src="{% static 'images/place_ex.svg' %}" alt="Card image cap">
+                        <div class="card-body">
+                            <h3>{{ place.place }}</h3>
+                            <p class="card-text">{{ place.description }}</p>
+                        </div>
+                    </a>
+                </div>
+
+            {% endfor %}
+            </div>
+        {% endif %}
+
+
+
+    <button class="add_btn">
+        <img src="{% static 'images/add_icon.svg' %}"/>
+    </button>
+
+</div>
+
 
 </body>
+
 </html>

@@ -1,0 +1,60 @@
+header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.round_profile{
+    margin-right: auto;
+    display: flex;
+    width: fit-content;
+    margin-left: 5%;
+    align-items: center;
+}
+.round_profile img{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(140, 168, 168);
+    border-radius: 100%;
+    margin-right: 10px;
+}
+.btn_exit{
+    margin-left: auto;
+    display: flex;
+    width: fit-content;
+    margin-right: 5%;
+}
+
+.left_side {
+    margin-right: auto;
+    margin-left: 5%;
+    top: 40%;
+    position: absolute;
+}
+
+.right_side {
+    margin-left: auto;
+    
+}
+.left_side input{
+    width: fit-content;
+    border-radius: 75px;
+    margin-bottom: 10px;
+}
+.left_side button {
+    border-radius: 75px;
+    border-style: none;
+    background-color: #2787F5;
+    color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

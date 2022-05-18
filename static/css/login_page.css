@@ -1,0 +1,38 @@
+
+
+.content {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+}
+
+.left_image {
+    /* margin-right: auto; */
+    /* width: 35%; */
+    height: 100vh;
+}
+
+.left_image img{
+    height: 100vh;
+    
+}
+.text_content {
+    margin-left: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 30px;
+    
+    
+}
+
+.text_content button{
+    border-radius: 75px;
+    border-color: #0000;
+    background-color: #2787F5;
+    color: white;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
