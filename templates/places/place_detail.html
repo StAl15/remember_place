@@ -11,15 +11,7 @@
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
-    <header>
-        <div class="round_profile">
-            <img src="{% static 'images/face.svg' %}" alt="" />
-            <h5>John Doe</h5>
-        </div>
-        <div class="btn_exit">
-            <h5>Выйти</h5>
-        </div>
-    </header>
+    {% include 'include/header.html' %}
     <div class="content">
         <div class="left_side">
             <h3>Добавить место</h3>
@@ -36,6 +28,7 @@
             <input class="form-control" type="text" placeholder="{{ comment }}">
             {% endwith %}
             <button>Сохранить</button>
+            <button style="background-color: red;">Удалить</button>
         </div>
         <div class="right_side">
 

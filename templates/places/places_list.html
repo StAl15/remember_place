@@ -14,31 +14,25 @@
 
 <body>
 
-<header>
-    <div class="round_profile">
-        <img src="{% static 'images/face.svg' %}" alt=""/>
-        <h5>John Doe</h5>
-    </div>
-    <div class="btn_exit">
-        <h5>Выйти</h5>
-    </div>
-</header>
+{% include 'include/header.html' %}
 <div class="content">
 
 
         {% if not places_list %}
             <div class="label_no_places">
                 <h3>У вас нет ни одного воспоминания</h3>
-                <button>
+                <a href="add_place/">
+                    <button>
                     Добавить воспоминание
                 </button>
+                </a>
             </div>
         {% else %}
             <div class="list_places">
             {% for place in places_list %}
 
                 <div class="card" style="width: 18rem; margin-right: 20px; margin-bottom: 20px;">
-                    <a href="http://localhost:8000/{{ place.id }}/" style="text-decoration: none;">
+                    <a href="http://localhost:8000/{{ place.id }}/" style="text-decoration: none; color:black;">
                         <img class="card-img-top" src="{% static 'images/place_ex.svg' %}" alt="Card image cap">
                         <div class="card-body">
                             <h3>{{ place.place }}</h3>
@@ -53,9 +47,12 @@
 
 
 
-    <button class="add_btn">
+    <a href="add_place/">
+        <button class="add_btn">
         <img src="{% static 'images/add_icon.svg' %}"/>
     </button>
+    </a>
+
 
 </div>
 

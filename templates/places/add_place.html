@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add place</title>
+    <link rel="stylesheet" href="{% static 'css/add_place.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+{% include 'include/header.html' %}
+<div class="content">
+    <div class="left_side">
+        <form action="{% url 'add_place' %}" method="post">
+            {% csrf_token %}
+            <h3>Добавить место</h3>
+            <p>Укажите место на карте, название и комментарий</p>
+            <input class="form-control" type="text" placeholder="Название" name="place">
+            <input class="form-control" type="text" placeholder="Комментарий" name="description">
+            <button type="submit">Сохранить</button>
+        </form>
+
+    </div>
+    <div class="right_side">
+
+    </div>
+</div>
+</body>
+</html>
