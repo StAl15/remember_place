@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--{% load account %}-->
 {% load static %}
 <html lang="en">
 <head>
@@ -14,14 +15,15 @@
 
 <div class="content">
 
+<!--    {% get_providers as socialaccount_providers %}-->
     <div class="left_image">
         <img src="{% static 'images/cover_left.svg' %}"/>
     </div>
-    <div class="text_content">
+    <form class="text_content" method="post" action="{% url 'account_login' %}">
         <h3>Places Remember</h3>
         <p>Сервис, позволяющий хранить воспоминания о ваших местах</p>
-        <button>Войти через VK</button>
-    </div>
+        <button>{% trans "Войти через VK" %}</button>
+    </form>
 
 
 </div>
