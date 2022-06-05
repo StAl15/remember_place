@@ -6,17 +6,27 @@
 {% if provider.id == "openid" %}
 {% for brand in provider.get_brands %}
 <li style="text-decoration: none; color: white;">
-  <a title="{{brand.name}}"
-     style="text-decoration: none; color: white;"
-     class="socialaccount_provider {{provider.id}} {{brand.id}}" 
-     href="{% provider_login_url provider.id openid=brand.openid_url process=process %}"
-     >{{brand.name}}
-  </a>
+    <a title="{{brand.name}}"
+       style="text-decoration: none; color: white;"
+       class="socialaccount_provider {{provider.id}} {{brand.id}}"
+       href="{% provider_login_url provider.id openid=brand.openid_url process=process %}"
+    >{{brand.name}}
+    </a>
 </li>
 {% endfor %}
 {% endif %}
 <li>
-  <a style="text-decoration: none; color: white;" title="{{provider.name}}" class="socialaccount_provider {{provider.id}}"
-     href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">Войти через {{provider.name}}</a>
+    <button style="margin-left: -40px; text-decoration: none; width: max-content; list-style: none;
+                 border-radius: 75px; border-color: #0000;
+                 background-color: #2787F5; color: white;
+                 padding: 0px; padding-left: 30px;
+                 padding-right: 30px; height: 40px; margin-bottom: 15px;">
+        <a style="text-decoration: none; color: white;" title="{{provider.name}}"
+           class="socialaccount_provider {{provider.id}}"
+           href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">Войти через
+            {{provider.name}}</a>
+
+    </button>
+
 </li>
 {% endfor %}

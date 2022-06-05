@@ -1,9 +1,10 @@
 {% load static %}
+
 <header>
     <div class="round_profile">
-        <img src="{% static 'images/face.svg' %}" alt=""/>
+        <img src="{{ user.picture }}" alt=""/>
         <a href="/" style="text-decoration:none; color: black;">
-            <h5>John Doe</h5>
+            <h5>{{ user.first_name }} {{ user.last_name }}</h5>
         </a>
     </div>
     <a class="btn_exit" style="text-decoration: none;" href="{% url 'account_logout' %}">

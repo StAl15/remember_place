@@ -17,7 +17,6 @@
 {% include 'include/header.html' %}
 <div class="content">
 
-
         {% if not places_list %}
             <div class="label_no_places">
                 <h3>У вас нет ни одного воспоминания</h3>
@@ -32,7 +31,7 @@
             {% for place in places_list %}
 
                 <div class="card" style="width: 18rem; margin-right: 20px; margin-bottom: 20px;">
-                    <a href="http://localhost:8000/{{ place.id }}/" style="text-decoration: none; color:black;">
+                    <a href="{% url 'place_detail' place.id %}" style="text-decoration: none; color:black;">
                         <img class="card-img-top" src="{% static 'images/place_ex.svg' %}" alt="Card image cap">
                         <div class="card-body">
                             <h3>{{ place.place }}</h3>
