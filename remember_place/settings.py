@@ -48,7 +48,7 @@ SOCIALACCOUNT_PROVIDERS = {
     'facebook': {
         'METHOD': 'oauth2',
         'SDK_URL': '//connect.facebook.net/en_US/sdk.js',
-        'SCOPE': ['email', 'public_profile', 'user_friends'],
+        'SCOPE': ['user_photos', 'user_link', 'email', 'public_profile', 'user_friends'],
         'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
         'INIT_PARAMS': {'cookie': True},
         'FIELDS': [
@@ -71,6 +71,9 @@ SOCIALACCOUNT_PROVIDERS = {
         'VERSION': 'v13.0',
     },
 }
+
+SOCIAL_AUTH_FACEBOOK_KEY = 564130141999927
+SOCIAL_AUTH_FACEBOOK_SECRET = '09c2a5a6decdafd565d488fd9b10d576'
 
 
 
